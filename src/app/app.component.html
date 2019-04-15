@@ -1,13 +1,41 @@
-<mat-toolbar>
-  <span>{{title}}</span>
-  <a href="" mat-button>
-    <mat-icon class="mat-18">home</mat-icon>
-    Accueil
-  </a>
-  <a href="" mat-button>
-    <mat-icon class="mat-18">room</mat-icon>
-    Salles
-  </a>
+<mat-toolbar color="primary" class="flex-container">
+  <div>
+    <span>{{title}}</span>
+    <a href="" mat-button>
+      <mat-icon class="mat-18">home</mat-icon>
+      Accueil
+    </a>
+    <a href="" mat-button>
+      <mat-icon class="mat-18">room</mat-icon>
+      Salles
+    </a>
+  </div>
+  <div>
+    <ng-container *ngIf="user == null; else log">
+      <a href="" mat-button>
+        <mat-icon class="mat-18">locked_out</mat-icon>
+        Login
+      </a>
+    </ng-container>
+    <ng-template #log>
+      Bonjour ...
+      <button mat-button [matMenuTriggerFor]="menuRef">
+        <mat-icon class="mat-18">more_vert</mat-icon>
+      </button>
+    </ng-template>
+    <mat-menu #menuRef="matMenu" x-position="after" y-position="below" [overlapTrigger]="false">
+      <a href="" mat-menu-item>
+        <mat-icon class="mat-18">person</mat-icon>
+        Profile
+      </a>
+      <button mat-menu-item>
+        <mat-icon class="mat-18">locked_in</mat-icon>
+        Logout
+      </button>
+    </mat-menu>
+
+
+  </div>
 </mat-toolbar>
 
 ACCUEIL
