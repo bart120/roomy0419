@@ -7,6 +7,7 @@ import { MaterialModule } from './material.module';
 import { RoomModule } from './pages/room/room.module';
 import { routes } from './app.routes';
 import { HomeModule } from './pages/home/home.module';
+import { RoomService } from './services/room.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { HomeModule } from './pages/home/home.module';
     HomeModule,
     RoomModule
   ],
-  providers: [],
+  providers: [/*{ provide: RoomService, useClass: RoomService }*/],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

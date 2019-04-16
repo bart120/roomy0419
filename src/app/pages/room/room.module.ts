@@ -4,6 +4,7 @@ import { ListComponent } from './list/list.component';
 import { TopFiveComponent } from './top-five/top-five.component';
 import { MaterialModule } from 'src/app/material.module';
 import { CreateComponent } from './create/create.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [ListComponent, TopFiveComponent, CreateComponent],
