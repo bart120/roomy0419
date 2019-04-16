@@ -8,6 +8,7 @@ import { RoomModule } from './pages/room/room.module';
 import { routes } from './app.routes';
 import { HomeModule } from './pages/home/home.module';
 import { RoomService } from './services/room.service';
+import { AuthenticationModule } from './pages/authentication/authentication.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { RoomService } from './services/room.service';
     BrowserModule,
     MaterialModule,
     RouterModule.forRoot(routes),
+    AuthenticationModule,
     HomeModule,
     RoomModule
   ],

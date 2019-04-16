@@ -9,10 +9,11 @@ import { RoomService } from 'src/app/services/room.service';
 })
 export class TopFiveComponent implements OnInit {
 
+  // private serv: RoomService;
   rooms: Array<Room> = null;
 
-  constructor(serv: RoomService) {
-
+  constructor(private serv: RoomService) {
+    // this.serv = serv;
   }
 
   ngOnInit() {
@@ -22,6 +23,7 @@ export class TopFiveComponent implements OnInit {
       { name: 'Calliope', image: 'Calliope.jpg' },
       { name: 'Thalie', image: 'Thalie.jpg' }
     ];*/
+    this.rooms = this.serv.getTopFive();
   }
 
 }
