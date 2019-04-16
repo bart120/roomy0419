@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RoomService } from 'src/app/services/room.service';
+import { Room } from 'src/app/models/room.model';
 
 @Component({
   selector: 'app-room-list',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  rooms: Array<Room> = null;
+  cols: Array<string> = ['name', 'price'];
+
+  constructor(private roomServ: RoomService) { }
 
   ngOnInit() {
+    this.roomServ.getRooms().subscribe(
+      data => this.rooms = data,
+      err => alert(err.message)
+    );
   }
 
 }
