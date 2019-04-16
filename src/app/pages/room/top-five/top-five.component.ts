@@ -23,7 +23,9 @@ export class TopFiveComponent implements OnInit {
       { name: 'Calliope', image: 'Calliope.jpg' },
       { name: 'Thalie', image: 'Thalie.jpg' }
     ];*/
-    this.rooms = this.serv.getTopFive();
+    this.serv.getTopFive().subscribe((data) => {
+      this.rooms = data;
+    });
   }
 
 }

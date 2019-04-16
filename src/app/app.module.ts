@@ -9,6 +9,7 @@ import { routes } from './app.routes';
 import { HomeModule } from './pages/home/home.module';
 import { RoomService } from './services/room.service';
 import { AuthenticationModule } from './pages/authentication/authentication.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { AuthenticationModule } from './pages/authentication/authentication.modu
     BrowserModule,
     MaterialModule,
     RouterModule.forRoot(routes),
+    HttpClientModule,
     AuthenticationModule,
     HomeModule,
     RoomModule
