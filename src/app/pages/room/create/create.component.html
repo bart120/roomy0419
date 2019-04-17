@@ -15,6 +15,14 @@
     <mat-error>Champ obligatoire</mat-error>
   </mat-form-field>
 
+  <mat-form-field>
+    <mat-label>Image</mat-label>
+    <mat-select name="image" [(ngModel)]="room.image">
+      <mat-option *ngFor="let pic of pictures" [value]="pic.id">{{pic.image}}</mat-option>
+    </mat-select>
+    <mat-error>Champ obligatoire</mat-error>
+  </mat-form-field>
+
   <div>
     <button mat-button type="submit" [disabled]="formRoom.invalid">Enregistrer</button>
   </div>
