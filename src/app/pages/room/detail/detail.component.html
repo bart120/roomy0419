@@ -1,0 +1,13 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{room?.name}}</mat-card-title>
+    <mat-card-subtitle>{{room?.price | devise}}</mat-card-subtitle>
+  </mat-card-header>
+  <img *ngIf="room" matCardImage src="/assets/images/{{room.image}}">
+  <mat-card-content>
+    {{room?.seatCount}} places.
+  </mat-card-content>
+  <mat-card-footer>
+    Footer
+  </mat-card-footer>
+</mat-card>

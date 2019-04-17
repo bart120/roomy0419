@@ -6,13 +6,18 @@ import { MaterialModule } from 'src/app/material.module';
 import { CreateComponent } from './create/create.component';
 import { RouterModule } from '@angular/router';
 import { PipeModule } from 'src/app/pipe/pipe.module';
+import { DetailComponent } from './detail/detail.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [ListComponent, TopFiveComponent, CreateComponent],
+  declarations: [ListComponent, TopFiveComponent, CreateComponent, DetailComponent],
   imports: [
     CommonModule,
     MaterialModule,
-    PipeModule
+    PipeModule,
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     TopFiveComponent

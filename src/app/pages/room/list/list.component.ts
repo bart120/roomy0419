@@ -10,7 +10,7 @@ import { Room } from 'src/app/models/room.model';
 export class ListComponent implements OnInit {
 
   rooms: Array<Room> = null;
-  cols: Array<string> = ['name', 'price'];
+  cols: Array<string> = ['name', 'price', 'action'];
 
   constructor(private roomServ: RoomService) { }
 
