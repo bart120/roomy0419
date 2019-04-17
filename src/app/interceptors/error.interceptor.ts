@@ -6,9 +6,7 @@ import { Router } from '@angular/router';
 import { AuthenticationService } from '../services/authentication.service';
 import { MatSnackBar } from '@angular/material';
 
-@Injectable({
-    providedIn: 'root'
-})
+@Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
 
     constructor(

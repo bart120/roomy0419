@@ -4,9 +4,7 @@ import { Observable } from 'rxjs';
 import { AuthenticationService } from '../services/authentication.service';
 import { UserLog } from '../models/user-log.model';
 
-@Injectable({
-    providedIn: 'root'
-})
+@Injectable()
 export class JwtInterceptor implements HttpInterceptor {
     user: UserLog;
 
@@ -17,6 +15,7 @@ export class JwtInterceptor implements HttpInterceptor {
     }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+        console.warn('add header');
         if (this.user != null) {
             req = req.clone({
                 setHeaders: {
