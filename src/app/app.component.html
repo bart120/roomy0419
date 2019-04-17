@@ -22,7 +22,7 @@
       </a>
     </ng-container>
     <ng-template #log>
-      Bonjour ...
+      Bonjour {{user?.login}}
       <button mat-button [matMenuTriggerFor]="menuRef">
         <mat-icon class="mat-18">more_vert</mat-icon>
       </button>
@@ -32,7 +32,7 @@
         <mat-icon class="mat-18">person</mat-icon>
         Profile
       </a>
-      <button mat-menu-item>
+      <button mat-menu-item (click)="logout()">
         <mat-icon class="mat-18">locked_in</mat-icon>
         Logout
       </button>

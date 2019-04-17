@@ -23,7 +23,7 @@ export class RoomService {
     }
 
     getRooms(): Observable<Array<Room>> {
-        return this.http.get<Array<Room>>(environment.urlRooms);
+        return this.http.get<Array<Room>>('http://formation-roomy.inow.fr/api/news');
     }
 
     getRoom(id: number): Observable<Room> {

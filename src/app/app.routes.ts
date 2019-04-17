@@ -5,6 +5,7 @@ import { ListComponent } from './pages/room/list/list.component';
 import { NotfoundComponent } from './pages/home/notfound/notfound.component';
 import { RoomModule } from './pages/room/room.module';
 import { DetailComponent } from './pages/room/detail/detail.component';
+import { AuthenticationGuard } from './guards/authentication.guard';
 
 export const routes: Routes = [
     { path: 'home', component: HomeComponent },
@@ -12,7 +13,7 @@ export const routes: Routes = [
     {
         path: 'rooms',
         children: [
-            { path: 'create', component: CreateComponent },
+            { path: 'create', component: CreateComponent, canActivate: [AuthenticationGuard] },
             { path: 'list', component: ListComponent },
             { path: 'details/:id', component: DetailComponent }
         ]
