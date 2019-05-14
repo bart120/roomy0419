@@ -16,7 +16,7 @@ export class ListComponent implements OnInit {
 
   ngOnInit() {
     this.roomServ.getRooms().subscribe(
-      data => this.rooms = data
+      data => { this.rooms = data; }
     );
   }
 
